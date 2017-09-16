@@ -17,6 +17,7 @@ export const EditableNumber = styled.input`
   width: 1em;
   border: 0 none;
   font-family: 'Permanent Marker', cursive;
+  font-size: 1em;
   text-align: center;
 
   &:focus {
