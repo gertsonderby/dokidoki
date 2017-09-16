@@ -14,12 +14,22 @@ export const Wrapper = styled.div`
     ${boxSize} ${boxSize} ${boxSize} ${boxSize};
 `;
 
-const digitToCell = digit => (
-  <SudokuCell staticValue={digit === '.' ? undefined : parseInt(digit, 10)} />
+const digitToCell = (digit, x, y, value) => (
+  <SudokuCell
+    key={x + '_' + y}
+    value={value}
+    staticValue={digit === '.' ? undefined : parseInt(digit, 10)}
+  />
 );
 
-const SudokuPuzzle = ({ puzzle }) => (
-  <Wrapper>{puzzle.map(line => line.split('').map(digitToCell))}</Wrapper>
+const SudokuPuzzle = ({ puzzle, solution }) => (
+  <Wrapper>
+    {puzzle.map((line, y) =>
+      line
+        .split('')
+        .map((digit, x) => digitToCell(digit, x, y, solution[y][x])),
+    )}
+  </Wrapper>
 );
 
 SudokuPuzzle.propTypes = {
