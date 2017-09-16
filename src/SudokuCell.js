@@ -17,6 +17,11 @@ export const EditableNumber = styled.input`
   width: 1em;
   border: 0 none;
   font-family: 'Permanent Marker', cursive;
+  text-align: center;
+
+  &:focus {
+    outline: 0;
+  }
 `;
 
 const SudokuCell = ({ staticValue = 0, value = '' }) => {
