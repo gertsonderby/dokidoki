@@ -2,7 +2,7 @@ import expect from 'testHelpers/expect';
 import React from 'react';
 import SudokuPuzzle, { Wrapper } from './SudokuPuzzle';
 import SudokuCell from 'SudokuCell';
-import puzzles from './puzzles';
+import puzzles from 'puzzles';
 
 describe('SudokuPuzzle', () => {
   it('is a component', () =>
