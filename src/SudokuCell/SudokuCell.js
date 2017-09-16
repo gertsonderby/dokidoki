@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Box = styled.div`
   border: 1px solid #666;
@@ -9,6 +9,8 @@ export const Box = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  ${props => (props.conflict ? css`background-color: orangered;` : '')};
 `;
 
 export const StaticNumber = styled.span`font-family: 'Raleway', sans-serif;`;
@@ -25,18 +27,19 @@ export const EditableNumber = styled.input`
   }
 `;
 
-const SudokuCell = ({ staticValue = 0, value = '' }) => {
+const SudokuCell = ({ staticValue = 0, value = '', onChange, conflict }) => {
   const printValue =
     staticValue === 0 ? (
-      <EditableNumber value={`${value}`} />
+      <EditableNumber value={`${value}`} onChange={onChange} />
     ) : (
       <StaticNumber>{`${staticValue}`}</StaticNumber>
     );
-  return <Box>{printValue}</Box>;
+  return <Box conflict={conflict}>{printValue}</Box>;
 };
 
 SudokuCell.propTypes = {
   staticValue: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default SudokuCell;
