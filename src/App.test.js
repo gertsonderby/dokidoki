@@ -1,8 +1,9 @@
+import expect from 'testHelpers/expect';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import TestUtils from 'react-dom/test-utils';
 import App from 'App';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  const app = TestUtils.renderIntoDocument(<App />);
+  return expect(app, 'to have rendered', <div />);
 });
