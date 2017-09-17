@@ -15,7 +15,9 @@ describe('addSolutionState', () => {
         <TestComponent
           puzzle={['12.', '.5.', '8.9']}
           solution={[[1, 2, ''], ['', 5, ''], [8, '', 9]]}
-          getCellSetter={expect.it('to be a function')}
+          getCellSetter={expect
+            .it('to be a function')
+            .and('when called with', [1, 2], 'to be a function')}
         />,
       ),
     ));
