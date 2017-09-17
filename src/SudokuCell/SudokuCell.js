@@ -10,7 +10,7 @@ export const Box = styled.div`
   justify-content: space-around;
   align-items: center;
 
-  ${props => (props.conflict ? css`background-color: orangered;` : '')};
+  ${props => (props.conflict ? css`background-color: #ff6666;` : '')};
 `;
 
 export const StaticNumber = styled.span`font-family: 'Raleway', sans-serif;`;
@@ -21,6 +21,7 @@ export const EditableNumber = styled.input`
   font-family: 'Permanent Marker', cursive;
   font-size: 1em;
   text-align: center;
+  background-color: transparent;
 
   &:focus {
     outline: 0;
