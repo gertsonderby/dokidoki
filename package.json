@@ -33,7 +33,9 @@
     "react-app-rewire-styled-components": "^3.0.0",
     "react-app-rewired": "^1.2.7",
     "react-test-renderer": "^15.6.1",
+    "sinon": "^3.2.1",
     "unexpected": "^10.35.0",
-    "unexpected-react": "^4.1.0"
+    "unexpected-react": "^4.1.0",
+    "unexpected-sinon": "^10.8.2"
   }
 }
