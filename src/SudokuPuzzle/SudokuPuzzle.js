@@ -14,18 +14,22 @@ export const Wrapper = styled.div`
     ${boxSize} ${boxSize} ${boxSize} ${boxSize};
 `;
 
-const digitToCell = (digit, x, y, value, handler) => (
+const digitToCell = (digit, x, y, value, handler, conflict) => (
   <SudokuCell
-    key={x + '_' + y}
+    key={`${x}_${y}`}
     value={value}
     onChange={handler}
     staticValue={digit === '.' ? undefined : parseInt(digit, 10)}
+    conflict={conflict}
   />
 );
 
 const createOnChangeHandler = updater => event => updater(event.target.value);
 
-const SudokuPuzzle = ({ puzzle, solution, getCellSetter }) => (
+const checkConflict = (x, y, conflicts) =>
+  !!conflicts[`${x}_${y}`] || undefined;
+
+const SudokuPuzzle = ({ puzzle, solution, conflicts, getCellSetter }) => (
   <Wrapper>
     {puzzle.map((line, y) =>
       line
@@ -37,6 +41,7 @@ const SudokuPuzzle = ({ puzzle, solution, getCellSetter }) => (
             y,
             solution[y][x],
             createOnChangeHandler(getCellSetter(x, y)),
+            checkConflict(x, y, conflicts),
           ),
         ),
     )}

@@ -18,9 +18,10 @@ describe('SudokuPuzzle', () => {
         puzzle={puzzles.easy.slice(0, 3)}
         solution={[
           [5, 1, '', '', '', '', '', 8, 3],
-          [8, '', '', 4, 1, 6, '', '', 5],
+          [8, 5, 3, 4, 1, 6, '', '', 5],
           ['', '', '', '', '', '', '', '', ''],
         ]}
+        conflicts={{ '1_1': ['8_1'], '8_1': ['1_1'] }}
         getCellSetter={() => () => {}}
       />,
       'to exactly render as',
@@ -56,8 +57,12 @@ describe('SudokuPuzzle', () => {
           staticValue={8}
           value={8}
         />
-        <SudokuCell onChange={expect.it('to be a function')} value="" />
-        <SudokuCell onChange={expect.it('to be a function')} value="" />
+        <SudokuCell
+          onChange={expect.it('to be a function')}
+          value={5}
+          conflict
+        />
+        <SudokuCell onChange={expect.it('to be a function')} value={3} />
         <SudokuCell
           onChange={expect.it('to be a function')}
           staticValue={4}
@@ -77,6 +82,7 @@ describe('SudokuPuzzle', () => {
         <SudokuCell onChange={expect.it('to be a function')} value="" />
         <SudokuCell
           onChange={expect.it('to be a function')}
+          conflict
           staticValue={5}
           value={5}
         />
