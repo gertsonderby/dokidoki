@@ -6,7 +6,7 @@ const addSolutionState = compose(
   ),
   withHandlers({
     getCellSetter: ({ solution, setSolution }) => (x, y) => value => {
-      solution[y][x] = parseInt(value, 10) || '';
+      solution[y][x] = value ? parseInt(value.slice(-1), 10) : '';
       setSolution(solution);
     },
   }),
