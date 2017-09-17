@@ -12,7 +12,7 @@ const addSolutionState = compose(
       setConflict = () => {},
       clearConflicts = () => {},
     }) => (x, y) => value => {
-      solution[y][x] = value ? parseInt(value.slice(-1), 10) : '';
+      solution[y][x] = (value && parseInt(value.slice(-1), 10)) || '';
       setSolution(solution);
       hasConflict(solution, x, y, setConflict, clearConflicts);
     },
