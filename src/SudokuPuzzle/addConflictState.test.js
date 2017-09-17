@@ -17,6 +17,9 @@ describe('addConflictState', () => {
           setConflict={expect
             .it('to be a function')
             .and('when called with', [1, 3, 1, 7])}
+          clearConflicts={expect
+            .it('to be a function')
+            .and('when called with', [1, 3])}
         />,
       ),
     ));

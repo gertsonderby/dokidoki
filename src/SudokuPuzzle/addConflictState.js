@@ -22,6 +22,16 @@ const addConflictState = compose(
       conflicts[key2] = list2;
       setAllConflicts(conflicts);
     },
+    clearConflicts: ({ conflicts, setAllConflicts }) => (x, y) => {
+      const key = `${x}_${y}`;
+      (conflicts[key] || []).forEach(key2 => {
+        toggleArrayElement(conflicts[key2], key);
+        if (conflicts[key2].length === 0) {
+          delete conflicts[key2];
+        }
+      });
+      delete conflicts[key];
+    },
   }),
 );
 
