@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "lint-staged": "^4.2.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13",
-    "recompose": "^0.25.0",
-    "styled-components": "^2.1.2"
+    "lint-staged": "^10.2.11",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "recompose": "^0.30.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "precommit": "lint-staged",
@@ -28,14 +28,14 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "husky": "^0.14.3",
-    "prettier": "^1.7.0",
-    "react-app-rewire-styled-components": "^3.0.0",
-    "react-app-rewired": "^1.2.7",
-    "react-test-renderer": "^15.6.1",
-    "sinon": "^3.2.1",
-    "unexpected": "^10.35.0",
-    "unexpected-react": "^4.1.0",
-    "unexpected-sinon": "^10.8.2"
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "react-app-rewire-styled-components": "^3.0.2",
+    "react-app-rewired": "^2.1.6",
+    "react-test-renderer": "^16.13.1",
+    "sinon": "^9.0.2",
+    "unexpected": "^11.14.0",
+    "unexpected-react": "^6.0.1",
+    "unexpected-sinon": "^10.11.2"
   }
 }
